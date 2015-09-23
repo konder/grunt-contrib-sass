@@ -72,7 +72,7 @@ module.exports = function (grunt) {
       }
 
       // suport utf-8
-      var bin = 'sass -E "utf-8"';
+      var bin = 'sass';
 
       if (options.bundleExec) {
         bin = 'bundle';
@@ -89,6 +89,8 @@ module.exports = function (grunt) {
         grunt.file.write(file.dest, '');
       }
 
+      args.push(' -E "utf-8"');
+      
       grunt.verbose.writeln('Command: ' + bin + ' ' + args.join(' '));
 
       var cp = spawn(bin, args, {stdio: 'inherit'});
