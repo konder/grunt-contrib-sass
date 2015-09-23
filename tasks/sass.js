@@ -71,7 +71,6 @@ module.exports = function (grunt) {
         }
       }
 
-      // suport utf-8
       var bin = 'sass';
 
       if (options.bundleExec) {
@@ -84,12 +83,13 @@ module.exports = function (grunt) {
         args.push('--scss');
       }
 
+      // suport utf-8
+      args.push('-Eutf-8');
+      
       // Make sure grunt creates the destination folders if they don't exist
       if (!grunt.file.exists(file.dest)) {
         grunt.file.write(file.dest, '');
       }
-
-      args.push(' -E "utf-8"');
       
       grunt.verbose.writeln('Command: ' + bin + ' ' + args.join(' '));
 
