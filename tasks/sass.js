@@ -71,7 +71,8 @@ module.exports = function (grunt) {
         }
       }
 
-      var bin = 'sass';
+      // suport utf-8
+      var bin = 'sass -E "utf-8"';
 
       if (options.bundleExec) {
         bin = 'bundle';
